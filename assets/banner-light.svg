@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Pedro Rozas, full-stack developer">
+<style>
+.flow { animation: flow 1.6s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -40; } }
+@media (prefers-reduced-motion: reduce) { .flow { animation: none; } }
+</style>
+<defs>
+<radialGradient id="glow" cx="0.82" cy="0.5" r="0.55"><stop offset="0" stop-color="#14b8a6" stop-opacity="0.16"/><stop offset="1" stop-color="#14b8a6" stop-opacity="0"/></radialGradient>
+<radialGradient id="glow2" cx="0.05" cy="0" r="0.5"><stop offset="0" stop-color="#f59e0b" stop-opacity="0.10"/><stop offset="1" stop-color="#f59e0b" stop-opacity="0"/></radialGradient>
+<pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#0d1117" fill-opacity="0.07"/></pattern>
+<clipPath id="card"><rect width="1200" height="300" rx="16"/></clipPath>
+</defs>
+<g clip-path="url(#card)">
+<rect width="1200" height="300" fill="#ffffff"/>
+<rect width="1200" height="300" fill="url(#dots)"/>
+<rect width="1200" height="300" fill="url(#glow)"/>
+<rect width="1200" height="300" fill="url(#glow2)"/>
+</g>
+<text x="64" y="92" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="14" letter-spacing="2" fill="#0f766e">FULL-STACK DEVELOPER · CHILE</text>
+<text x="62" y="160" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-1.5" fill="#1f2328">Pedro Rozas</text>
+<text x="64" y="204" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="20" fill="#59636e">I build products with NestJS, React and Next.js,</text>
+<text x="64" y="232" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="20" fill="#59636e">and the AI features that run inside them.</text>
+<path d="M826.0 150 C842.5 150, 842.5 150, 859.0 150" fill="none" stroke="#d1d9e0" stroke-width="2"/><path class="flow" style="animation-delay:0s" d="M826.0 150 C842.5 150, 842.5 150, 859.0 150" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 14"/>
+<path d="M971.0 150 C972.0 150, 972.0 95, 973.0 95" fill="none" stroke="#d1d9e0" stroke-width="2"/><path class="flow" style="animation-delay:0.4s" d="M971.0 150 C972.0 150, 972.0 95, 973.0 95" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 14"/>
+<path d="M971.0 150 C985.0 150, 985.0 205, 999.0 205" fill="none" stroke="#d1d9e0" stroke-width="2"/><path class="flow" style="animation-delay:0.8s" d="M971.0 150 C985.0 150, 985.0 205, 999.0 205" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 14"/>
+<rect x="714.0" y="131" width="112" height="38" rx="19" fill="#f6f8fa" stroke="#d1d9e0" stroke-width="1.5"/><text x="770" y="155" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#1f2328">Next.js</text>
+<rect x="859.0" y="131" width="112" height="38" rx="19" fill="#e6fffa" stroke="#14b8a6" stroke-width="1.5"/><text x="915" y="155" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#0f766e">NestJS</text>
+<rect x="973.0" y="76" width="184" height="38" rx="19" fill="#f6f8fa" stroke="#d1d9e0" stroke-width="1.5"/><text x="1065" y="100" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#1f2328">Postgres · pgvector</text>
+<rect x="999.0" y="186" width="132" height="38" rx="19" fill="#f6f8fa" stroke="#d1d9e0" stroke-width="1.5"/><text x="1065" y="210" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#1f2328">LLM · RAG</text>
+</svg>

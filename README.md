@@ -1,4 +1,12 @@
-# Pedro Rozas
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+  <img alt="Pedro Rozas, full-stack developer. I build products with NestJS, React and Next.js, and the AI features that run inside them." src="assets/banner-light.svg" width="100%">
+</picture>
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/pedro-rozas-mateluna/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-pedro--rozas--mateluna-0A66C2?style=flat-square&logo=linkedin&logoColor=white"></a>
+  <a href="https://presupuestados.cl"><img alt="PresupuestaDos" src="https://img.shields.io/badge/Live-presupuestados.cl-10b981?style=flat-square"></a>
+</p>
 
 Full-stack developer. I build web apps with TypeScript: React and Next.js on the front, and NestJS for almost every backend. On top of them I add AI features (RAG, OCR pipelines, LLM-generated content). I also build mobile apps with Flutter and data tooling with Python. Lately I've been building tools that make working with Claude Code easier to follow.
 
@@ -6,56 +14,74 @@ Full-stack developer. I build web apps with TypeScript: React and Next.js on the
 
 The code of these products is private. Happy to walk through it on request.
 
-### PresupuestaDos · [presupuestados.cl](https://presupuestados.cl)
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://presupuestados.cl"><img alt="PresupuestaDos landing page" src="assets/presupuestados.jpg" width="100%"></a>
+      <h3>PresupuestaDos · <a href="https://presupuestados.cl">presupuestados.cl</a></h3>
+      <p>Shared expenses for couples and roommates, <b>live in production</b>. Income, expenses, deductions and budgets, monthly dashboards, spending projections, bank-statement import with AI and a guest mode without an account.</p>
+      <p><sub><b>React · Vite · MUI · NestJS · Drizzle · PostgreSQL · Redis · BullMQ · OpenAI</b></sub></p>
+    </td>
+    <td width="50%" valign="top">
+      <img alt="Polaris sign-in screen" src="assets/polaris.jpg" width="100%">
+      <h3>Polaris · AI-assisted studying</h3>
+      <p>Students upload their notes and get flashcards, quizzes, review schedules and answers grounded in their own material. <b>RAG</b>: OCR → chunking → embeddings in pgvector with an HNSW index, and every answer cites the excerpts it used.</p>
+      <p><sub><b>Next.js · Tailwind · NestJS · Drizzle · PostgreSQL + pgvector · Redis · BullMQ · S3 · OpenAI</b></sub></p>
+    </td>
+  </tr>
+</table>
 
-A shared-expenses app for couples and roommates, live in production. It tracks income, expenses, deductions and budgets, shows monthly dashboards, projects future spending, imports bank statements with AI and has a guest mode that works without an account.
+<details>
+<summary><b>How PresupuestaDos and Polaris are built</b></summary>
 
-- **Stack:** React, TypeScript, Vite and MUI on the front; NestJS, Drizzle ORM, PostgreSQL (Supabase), Redis and BullMQ on the back; OpenAI for the AI features.
-- **Highlights:**
-  - The browser never talks to the database. A NestJS API owns auth, shared accounts, budgets and the AI features, with rate limiting against abuse.
-  - AI reads bank statements and powers a financial assistant.
-  - Reports export to Excel and PDF.
+**PresupuestaDos**
 
-### Polaris · AI-assisted studying
+- The browser never talks to the database. A NestJS API owns auth, shared accounts, budgets and the AI features, with rate limiting against abuse.
+- AI reads bank statements and powers a financial assistant.
+- Reports export to Excel and PDF.
 
-Students upload their notes and Polaris turns them into a study plan: it extracts concepts, generates flashcards and quizzes, schedules reviews and answers questions about the material with the sources it used.
+**Polaris**
 
-- **Stack:** Next.js, Tailwind CSS, Radix UI, React Query and Zustand on the front; NestJS, Drizzle ORM, PostgreSQL with pgvector, Redis, BullMQ and S3 storage on the back; OpenAI for OCR, embeddings and generation.
-- **Highlights:**
-  - **RAG over the student's own notes:**
-    - Uploaded material goes through an OCR → chunking → embedding pipeline in background jobs.
-    - Embeddings (`text-embedding-3-small`) live in pgvector behind an HNSW cosine index.
-    - Each question retrieves the closest chunks of that subject and answers with cited excerpts. When nothing is indexed it says so instead of guessing.
-  - Flashcard reviews are scheduled with FSRS, a modern spaced-repetition algorithm.
-  - AI features are pluggable providers (OpenAI or mock) with per-user quotas, so the app can be tested without spending tokens.
+- Uploaded material goes through OCR, chunking and embeddings (`text-embedding-3-small`) in background jobs.
+- Each question retrieves the closest chunks of that subject from pgvector (HNSW, cosine) and answers with cited excerpts. When nothing is indexed it says so instead of guessing.
+- Flashcard reviews are scheduled with FSRS, a modern spaced-repetition algorithm.
+- AI features are pluggable providers (OpenAI or mock) with per-user quotas, so the app can be tested without spending tokens.
+
+</details>
 
 ### Ingenio en Familia · in development
 
-A family web app of brain games and trivia in Chilean Spanish. It's built so that an 8-year-old and adults can compete fairly: everyone plays with content and difficulty matched to their level, and rankings compare progress relative to each player's own level.
+A family web app of brain games and trivia in Chilean Spanish, built so that an 8-year-old and adults can compete fairly. Everyone plays with content and difficulty matched to their level, and rankings compare progress relative to each player's own level.
 
-- **Stack:** Next.js, MUI, React Query, Zustand and React Three Fiber (a 3D pet) on the front; NestJS, Drizzle ORM and PostgreSQL on the back. Auth uses argon2 and cookie sessions. The API's OpenAPI contract generates the client.
-- **Highlights:**
-  - Difficulty adapts per player and per game.
-  - Missed questions come back through spaced repetition (Leitner), and every answer shows an explanation.
-  - Family members can challenge each other to asynchronous 1-vs-1 matches.
-  - A content pipeline sends every AI-generated question through human review before a child sees it.
+- Difficulty adapts per player and per game.
+- Missed questions come back through spaced repetition, and every answer shows an explanation.
+- Family members can challenge each other to asynchronous 1-vs-1 matches.
+- Every AI-generated question goes through human review before a child sees it.
+
+<sub><b>Next.js · MUI · React Query · Zustand · React Three Fiber · NestJS · Drizzle · PostgreSQL · OpenAPI</b></sub>
 
 ### More work
 
-- **Storybook AI:** personalized children's stories in Spanish, with the text and an illustration for each story generated by OpenAI. Next.js front, NestJS back, Supabase.
-- **Nailed It:** website for a manicure business, with services, gallery, testimonials, online booking and an admin panel. Vite, React and TypeScript.
+- **Storybook AI:** personalized children's stories in Spanish, with the text and an illustration for each story generated by OpenAI. Next.js, NestJS, Supabase.
+- **Nailed It:** website for a manicure business, with services, gallery, testimonials, online booking and an admin panel. Vite, React, TypeScript.
 - Websites and landing pages for small businesses.
 
 ## Open source
 
-- **[agent-board](https://github.com/PedroRozas/agent-board)**: a live board of every Claude Code session on your machine, with its subagents, current activity, context, cost and token usage. Web dashboard, docked pane and text views, in English and Spanish.
-- **[comparador-arriendo](https://github.com/PedroRozas/comparador-arriendo)**: a personal app to compare rental homes with a heatmap table, a weighted ranking, radar charts and side-by-side comparison. React, TypeScript, MUI and Supabase. Bring your own Supabase project.
+| Project | What it does |
+| --- | --- |
+| **[agent-board](https://github.com/PedroRozas/agent-board)** | A live board of every Claude Code session on your machine: subagents, current activity, context, cost and token usage. Web dashboard, docked pane and text views. |
+| **[comparador-arriendo](https://github.com/PedroRozas/comparador-arriendo)** | Compare rental homes with a heatmap table, weighted ranking, radar charts and side-by-side comparison. React, TypeScript, MUI, Supabase. Bring your own Supabase project. |
 
 ## Stack
 
-- **Languages:** TypeScript, JavaScript, Python, Dart
-- **Frontend:** React, Next.js, Vite, MUI, Tailwind CSS, React Query, Zustand, React Three Fiber
-- **Backend:** NestJS (my default for APIs), Node.js, Express, REST and OpenAPI, JWT and cookie sessions, background jobs
-- **Data:** PostgreSQL, pgvector, Supabase, Drizzle ORM, Redis, BullMQ
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=ts%2Cjs%2Creact%2Cnextjs%2Cvite%2Ctailwind%2Cmaterialui%2Cthreejs%2Cnestjs%2Cnodejs%2Cexpress%2Cpostgres%2Csupabase%2Credis%2Cpython%2Cflutter%2Cdart&perline=17&theme=dark">
+  <img alt="TypeScript, JavaScript, React, Next.js, Vite, Tailwind CSS, MUI, Three.js, NestJS, Node.js, Express, PostgreSQL, Supabase, Redis, Python, Flutter, Dart" src="https://skillicons.dev/icons?i=ts%2Cjs%2Creact%2Cnextjs%2Cvite%2Ctailwind%2Cmaterialui%2Cthreejs%2Cnestjs%2Cnodejs%2Cexpress%2Cpostgres%2Csupabase%2Credis%2Cpython%2Cflutter%2Cdart&perline=17&theme=light">
+</picture>
+
+- **Backend:** NestJS (my default for APIs), Node.js, Express, REST and OpenAPI, JWT and cookie sessions, background jobs with BullMQ
+- **Data:** PostgreSQL, pgvector, Supabase, Drizzle ORM, Redis
 - **AI:** OpenAI, RAG (embeddings, vector search, cited answers), OCR pipelines, Claude Code
+- **Frontend:** React, Next.js, Vite, MUI, Tailwind CSS, React Query, Zustand, React Three Fiber
 - **Mobile:** Flutter
