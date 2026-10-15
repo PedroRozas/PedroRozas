@@ -71,6 +71,7 @@ A family web app of brain games and trivia in Chilean Spanish, built so that an 
 | Project | What it does |
 | --- | --- |
 | **[agent-board](https://github.com/PedroRozas/agent-board)** | A live board of every Claude Code session on your machine: subagents, current activity, context, cost and token usage. Web dashboard, docked pane and text views. |
+| **[git-guard](https://github.com/PedroRozas/git-guard)** | Keeps Claude Code from committing, pushing or opening pull requests unless you grant a counted permission that expires by itself, and checks commit messages before they land. |
 | **[comparador-arriendo](https://github.com/PedroRozas/comparador-arriendo)** | Compare rental homes with a heatmap table, weighted ranking, radar charts and side-by-side comparison. React, TypeScript, MUI, Supabase. Bring your own Supabase project. |
 
 ## Stack
