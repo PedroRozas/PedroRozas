@@ -68,7 +68,7 @@ A family web app of brain games and trivia in Chilean Spanish, built so that an 
 
 ## Open source
 
-Three plugins for Claude Code, all in one marketplace: [claude-plugins](https://github.com/PedroRozas/claude-plugins). Add it once and install any of them.
+Four plugins for Claude Code, all in one marketplace: [claude-plugins](https://github.com/PedroRozas/claude-plugins). Add it once and install any of them.
 
 ```text
 /plugin marketplace add PedroRozas/claude-plugins
@@ -80,6 +80,7 @@ Three plugins for Claude Code, all in one marketplace: [claude-plugins](https://
 | **[agent-board](https://github.com/PedroRozas/agent-board)** | A live board of every Claude Code session on your machine: subagents, current activity, context, cost and token usage. Web dashboard, docked pane and text views. |
 | **[git-guard](https://github.com/PedroRozas/git-guard)** | Keeps Claude Code from committing, pushing or opening pull requests unless you grant a counted permission that expires by itself, and checks commit messages before they land. |
 | **[orphans](https://github.com/PedroRozas/orphans)** | Finds the processes Claude Code left running, asks the session whether it still needs them and ends them when the session closes. |
+| **[ship-ready](https://github.com/PedroRozas/ship-ready)** | Gives an honest verdict on whether a Claude Code plugin idea is worth building, then publishes it with README, license, changelog, CI, GitHub release and marketplace entry. Also releases new versions and audits plugins already published. |
 | **[comparador-arriendo](https://github.com/PedroRozas/comparador-arriendo)** | Compare rental homes with a heatmap table, weighted ranking, radar charts and side-by-side comparison. React, TypeScript, MUI, Supabase. Bring your own Supabase project. |
 
 ## Stack
